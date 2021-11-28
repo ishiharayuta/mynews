@@ -28,8 +28,3 @@ class ProfileController extends Controller
         return redirect('admin/profile/edit');
     }
 }
-?>
-
-<?php
-Route::git('XXX', 'AAAController@bbb');
-?>
