@@ -15,4 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::git('XXX', 'AAAController@bbb');
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('newa/create', 'admin\NewsController@add');
+});
+
+Route::git(['prefix' => 'admin'], function(){
+    Route::git('XXX', 'Admin\AAAController@bbb');
+});
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::git('profile/create', 'admin\ProfileController@add');
+    Route::git('profile/edit', 'admin\ProfileController@edit');
+});
